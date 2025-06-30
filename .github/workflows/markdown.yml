@@ -12,6 +12,9 @@ permissions: read-all
 
 jobs:
   lint-markdown:
+    permissions:
+      contents: read
+      issues: write # required for creating issue from file
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repo
