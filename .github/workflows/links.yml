@@ -12,10 +12,10 @@ permissions:
 
 jobs:
   check-links:
+    runs-on: ubuntu-latest
     permissions:
       contents: read
-      issues: write # required for creating issue from file
-    runs-on: ubuntu-latest
+      issues: write
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v4

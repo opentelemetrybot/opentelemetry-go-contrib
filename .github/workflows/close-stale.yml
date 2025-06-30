@@ -6,12 +6,13 @@ on:
 
 permissions:
   contents: read
+
 jobs:
   stale:
-    permissions:
-      issues: write # required for closing stale issues
-      pull-requests: write # required for closing stale PRs
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
     steps:
       - uses: actions/stale@v9
         with:
