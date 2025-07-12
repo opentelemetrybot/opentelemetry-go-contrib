@@ -5,11 +5,14 @@ on:
     - cron: "8 7 * * *" # arbitrary time not to DDOS GitHub
 
 permissions:
-  issues: write
-  pull-requests: write
+  contents: read
+
 jobs:
   stale:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write # required for closing stale issues
+      pull-requests: write # required for closing stale pull requests
     steps:
       - uses: actions/stale@v9
         with:
